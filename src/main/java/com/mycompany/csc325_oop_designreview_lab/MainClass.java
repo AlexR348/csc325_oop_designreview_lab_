@@ -4,41 +4,41 @@
 
 package com.mycompany.csc325_oop_designreview_lab;
 
+import java.util.Scanner;
+
 /**
- *
- * @author MoaathAlrajab
+ * MainClass is the entry point to test the Student, Freshman, and Senior classes.
+ * It demonstrates OOP principles such as inheritance, encapsulation, and polymorphism.
+ * The program creates student objects, allows for GPA input, and prints out their details.
  */
 public class MainClass {
 
- public static void main(String[] args) {
-		// ToDo 5: Fix the error
+	public static void main(String[] args) {
+		Scanner scanner = new Scanner(System.in);
 
-		// ToDo 6: Fix the constructor of the Student class
+		// Creating a Freshman student object
+		Freshman std1 = new Freshman("James", 20, 12); // name, age, credits
+		System.out.print("Enter GPA for " + std1.getName() + ": ");
+		double gpa1 = scanner.nextDouble();
+		std1.setGpa(gpa1);
 
-                // Todo 7: Create two classes for Freshman and Senior 
+		// Creating a Senior student object with a minimum of 85 credits
+		Senior std2 = new Senior("John", 30, 3.5, 90); // name, age, gpa, credits
+		System.out.print("Enter GPA for " + std2.getName() + ": ");
+		double gpa2 = scanner.nextDouble();
+		std2.setGpa(gpa2);
 
-                // ToDo 8: The senior class should have a minimum of 85 credits  
+		// Printing out the student information
+		System.out.println(std1);  // This will call the toString() of Freshman
+		System.out.println(std2);  // This will call the toString() of Senior
 
-		// ToDo 9: Add a toString method for the Student class
-		// ToDo 10: Add a toString method for the Freshman class
-
-		Student std1= new Student("James", 20);
-                // ToDo 11: Add a toString method for the Senior class
-
-		Freshman std1= new Student("James", 20, 12); // name, age, credits
-
-                Senior std2 = new Student("John", 30, 90);
-
-		// ToDo 12: Set the gpa of the student using the scanner and user
-		// 			input and then print the output.
-
-		System.out.println(std1);
-
-                System.out.println(std2);
-
-		// ToDo 13: add comments and explain your code
-
+		// Closing the scanner
+		scanner.close();
 	}
-
 }
+
+
+
+
+
 
